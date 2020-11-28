@@ -15,8 +15,8 @@
     </nav>
     <section>
         <h1>Formulário</h1>
-        <form action="contatos.html" method="GET">
-            Nome:  <input required type="text" name="nome" maxlength="10" /> <br />
+        <form action="contatos.html" method="POST">
+            Nome:  <input pattern="[A-Za-z]{10,}" autofocus required type="text" name="nome" maxlength="20" /> <br />
             Senha: <input required placeholder="Digite sua senha" type="password" name="senha" 
             maxlength="8" /><br />
             <hr />
@@ -24,10 +24,51 @@
             <br />
             <input type="email" name="email" placeholder="Seu Email" required/>
             <br />
-            <input type="submit" value="Enviar" />
+            <hr />
+            <label for="end">Endereço</label><br />
+            <input id="end" type="text" name="end" size="20" />
+            <br />
+
+            <input id="termosdeuso" type="checkbox" name="termos" value="aceito" />
+            <label for="termosdeuso">Aceito os termos de uso</label>
+
+            <br />
+            <label for="masc">Masculino</label>
+            <input type="radio" name="sexo" id="masc" value="masculino" />
+            <br />
+            <label for="fem">Feminino</label>
+            <input type="radio" name="sexo" id="fem" value="feminino" />
+            <br />
+            <label for="descricao">Descrição</label><br />
+            <textarea id="descricao" name="desc" cols="50" rows="5"></textarea>
+            <br />
+            <label for="estados">Estados</label><br />
+            <select name="Estado" id="estados" disabled>
+                <option value="0">-- selecione um estado --</option>
+                <option value="sp">São Paulo</option>
+                <option value="ba">Bahia</option>
+                <option value="pe">Pernambuco</option>
+            </select>
+            <br />
+            <label for="data">Data</label><br />
+            <input id="data" type="date" />
+            <br />
+            <label for="cor">Cor</label><br />
+            <input type="color" />
+            <br />
+            <label for="file">Arquivo</label><br />
+            <input type="file" />
+            <br />
+            <input type="submit" value="Enviar Form" name="enviar" />
+
+            
+            
         </form>
     </section>
     <!--Footer-->
-    <footer>Footer</footer>
+    <footer>
+
+
+    </footer>
 </body>
 </html>

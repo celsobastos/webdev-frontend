@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Layout</title>
+    <style>
+        div{
+           border: 1px solid black; 
+           width: 500px;
+        }
+        img{
+            width: 180px;
+            float: right;
+        }
+        .fix::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        body{
+            margin: 0;
+        }
+        ul{
+            list-style-type: none;
+            margin:0 0 5px 0;
+            padding: 0;
+            background-color:rgb(153, 153, 153);
+            width: 100%;
+            overflow: hidden;
+        }
+        li{
+            float: left;
+        }
+
+        li a{
+            color: white;
+            font-weight: bold ;
+            border-left:1px solid rgb(129, 129, 129);
+            padding: 10px 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        li a:hover{
+            background-color:rgb(70, 70, 70);
+            color:white;
+
+        }
+        div.fix2{
+           float: left; 
+        }
+        section{
+            margin:auto;
+            border: 1px solid rgb(2, 189, 64);
+            width: 80%;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Contatos</a></li>
+            <li><a href="#">Música</a></li>
+            <li><a href="#">Esporte</a></li>
+        </ul>
+    </nav>
+    <section>
+        <div class="fix">
+            <h2>Trabalhando com Seletores elemento</h2>
+            <p><img src="images/paris.jpg" />A expressão Lorem ipsum em design gráfico e 
+                editoração é um texto padrão em latim utilizado 
+                na produção gráfica para preencher os espaços de 
+                texto em publicações para testar e ajustar aspectos 
+                visuais antes de utilizar conteúdo real.</p>
+        </div>
+        <div class="fix2">
+            <h2>Trabalhando com Seletores Parent</h2>
+            <p>A expressão Lorem ipsum em design gráfico e 
+                editoração é um texto padrão em latim utilizado 
+                na produção gráfica para preencher os espaços de 
+                texto em publicações para testar e ajustar aspectos 
+                visuais antes de utilizar conteúdo real.</p>
+        </div>
+        <div class="fix2">
+            <h2>Trabalhando com Seletores Parent</h2>
+            <p>A expressão Lorem ipsum em design gráfico e 
+                editoração é um texto padrão em latim utilizado 
+                na produção gráfica para preencher os espaços de 
+                texto em publicações para testar e ajustar aspectos 
+                visuais antes de utilizar conteúdo real.</p>
+        </div>
+    </section>
+    
+</body>
+</html>

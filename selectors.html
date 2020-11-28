@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Selectors</title>
+    <style>
+       /*  Selectores */
+
+       /*
+       div p{
+           color:red;
+       }
+       h2.seletor{
+           font-size: 3em;
+       }
+       h2.child{
+           color:blue;
+       }
+       h2#p1{
+
+       }
+       div p{
+           font-style: italic;
+       }
+       
+       h2 + p{
+           font-style: italic;
+       }
+        
+       div > p{
+            color:red;
+       }
+       */
+
+       /* Pseudo class*/
+       /*
+       a:hover{
+          color: red; 
+          font-size: 2em;
+       }
+       div:hover{
+           background-color: rgba(165, 108, 108, 0.452);
+       }
+
+       div :nth-child(2){
+            background-color: yellow;
+       }*/
+
+       /* Pseudo Elements*/
+       /*
+       h2::after{
+           content: " -- ";
+       }
+       */
+       /* Border */
+       /*
+       div{
+            background-color: #949494;
+            width:50%;
+            /*
+            border-top: red solid 3px;
+            border-right: green double 5px;
+            border-left: green dashed 5px;
+            * /
+            border: rgba(61, 192, 65, 0.5) solid 2px;
+       }
+       */
+
+       /* Unidade de medida*/
+       /*
+       div p{
+           font-size: 30px;
+       }
+       div p span{
+           font-size: 2em;
+       }
+       div a{
+           font-size: 2em;
+       }
+
+       div:nth-child(1){
+           /*width:800px;* /
+           width: 50vw;
+           background-color: #36ca4a;
+       }
+
+       div:nth-child(1) p{
+           width:50%;
+           background-color: #0c5315;
+       }
+
+       div:nth-child(2){
+           width:600px;
+       }
+       h2{
+           font-size: 5vw;
+       }
+       */
+       /* Margin */
+       div:nth-child(1){
+           border:5px solid rgb(117, 50, 50);
+           width: 50%;
+           /*
+           margin: 150px ;
+           margin-top: 150px ;
+           margin-bottom: 100px ;
+           margin-right: 50px ;
+           margin-left: 10px ;
+           margin: 50px 10px 0 20px;
+           */
+           margin:80px auto;
+       }
+
+       body{
+          margin: 0; 
+       }
+
+       /* Padding */
+       div:nth-child(1){
+           padding-left: 20px ;
+           height: 250px;
+           overflow: auto;
+       }
+
+       /* background */
+       div:nth-child(1){
+           background-color:rgb(220, 255, 179);
+           border-radius: 20px;
+           /*background-image: url("images/branches.png");*/
+           background-size:cover;
+           /*background-image: url("images/eagle.jpg");*/
+           background-repeat: no-repeat;
+           /*background-position: 30px 100px;*/
+           /*height: 150px;*/
+           background-attachment: fixed;
+       }
+
+       body{
+            background-image: url("images/paris.jpg");
+            background-attachment: scroll;
+            background:url("images/paris.jpg");
+            background-position: -100px ;
+       }
+
+       #paragraph{
+           /*width: 300px;*/
+           text-align: justify;
+           color:red;
+           text-decoration: none;
+           text-transform: uppercase; /* lowercase*/
+           text-transform: capitalize;
+           line-height: 20px;
+           margin-left: 20px;
+           text-indent: 30px;
+           word-spacing:5px;
+       }
+
+       h2{
+           font-size: 32px;
+           text-shadow: 2px 2px 5px red;
+       }
+
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2 id="p1" class="seletor child">Trabalhando com Seletores elemento</h2>
+        <p id="paragraph">A expressão Lorem ipsum em design gráfico e 
+            editoração é um texto padrão em latim utilizado 
+            na produção gráfica para preencher os espaços de 
+            texto em publicações para testar e ajustar aspectos 
+            visuais antes de utilizar conteúdo real.</p>
+        <p>A expressão Lorem ipsum em design gráfico e 
+            editoração é um texto padrão em latim utilizado 
+            na produção gráfica para preencher os espaços de 
+            texto.<span> duas vezes o valor do elemento pai</span></p>
+        <a href="javascript:void(0)">Lorem ipsum</a>
+    </div>
+
+    <div>
+        <h2  id="p2" class="seletor">Trabalhando com Seletores Parent</h2>
+        <p>A expressão Lorem ipsum em design gráfico e 
+            editoração é um texto padrão em latim utilizado 
+            na produção gráfica para preencher os espaços de 
+            texto em publicações para testar e ajustar aspectos 
+            visuais antes de utilizar conteúdo real.</p>
+    </div>
+    
+</body>
+</html>

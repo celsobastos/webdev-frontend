@@ -1,0 +1,31 @@
+/* Formataçao da font */
+h2{
+    color: rgb(16, 61, 119);
+    /* altera o tipo de fonte */
+    font-family: monospace, Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic /* normal */;
+    font-variant: small-caps;
+
+    text-decoration: underline; /* none, overline*/
+}
+
+/* formatando links*/
+a{
+    border: solid 1px red;
+    text-decoration: none; 
+    
+    -moz-border-radius: 5em;
+    -ms-border-radius: 10em;
+    -o-border-radius: 2em;
+    -webkit-border-radius: 1em;
+    border-radius: 2em;
+}
+
+/* Formatando Paragrafo */
+section p{
+    width: 400px;
+}
+
+
