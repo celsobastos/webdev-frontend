@@ -5,28 +5,50 @@
     <title>Position</title>
     <style>
         .container{
-            width: 50%;
+            width: 600px;
             border: #000 solid 1px; 
             position: relative;
+            height:400px;
+            overflow-y:scroll;
+
         }
         .container > div{
             border: #000 solid 1px;
-            width: 80%;
-            height: 100px;
-            
+            width: 500px;
         }
         .a{
             background-color:red;
-            position: absolute;
-            bottom:0;
-            right: 0;
-            opacity: 0.5;
+            position: static;
+            top:0; /* top, bottom, left, right*/
+            right:0;
+            opacity: 0.8;
+            z-index: 2;
         }
         .b{
             background-color:green;
+            position: sticky;
+            right:20px;
+            top:0;
+            z-index: 3;
         }
         .c{
             background-color:blue;
+        }
+        [class*="caixa"]{
+            background-color: yellow;
+        }
+
+        [href^="https"]{
+            color:red;
+            font-size:30px;
+        }
+        [href$="br"]{
+            color:green;
+            font-size:50px;
+        }
+        input[type="text"]{
+            border: none;
+            border-bottom: #999 1px solid;
         }
     </style>
 </head>
@@ -37,9 +59,21 @@
             produção gráfica para preencheros espaços de texto em 
             publicações para testar e ajustar aspectos visuais antes de 
             utilizar conteúdo real.
-            <div class="a">Div a</div>
-            <div class="b">Div b</div>
-            <div class="c">Div c</div>
+            <div class="a caixa"><a href="http://wwww.xyz,com">Div a</a></div>
+            <div class="b caixa"><a href="https://www.google.com">Div b</a></div>
+            <div class="c caixa"><a href="https://www.lalal.com.br">Div c</a></div>
+            <form>
+                <div class="field-nome">  
+                    <label for="nome">Nome:</label>
+                    <div class="fields">
+                        <input id="nome" type="text" placeholder="Email" />
+                    </div>
+                    <label for="senha">Senha:</label>
+                    <div class="fields">
+                        <input id="senha" type="password" placeholder="Email" />
+                    </div>
+                </div>
+            </form>
     </div>  
 </body>
 </html>
