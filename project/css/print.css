@@ -1,0 +1,11 @@
+* {
+    margin:0;
+}
+
+nav{
+    visibility: hidden;
+}
+
+footer {
+    page-break-before: always;
+}

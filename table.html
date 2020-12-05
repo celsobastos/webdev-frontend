@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista</title>
+    <style>
+        .container{
+           overflow-x:auto;
+        }
+        table{
+            width: 100%;
+        }
+        table, th, td{
+            border:1px solid #000;
+            border-collapse: collapse;
+        }
+        th{
+            width: 70px;
+            height: 50px;
+            padding: 5px;
+        }
+        td{
+            /*height: 60px;*/
+            text-align: left; /* left right*/
+            vertical-align: middle; /* middle, bottom*/
+            padding: 20px;
+        }
+
+        tr.head{
+            background-color: rgb(8, 24, 27); 
+            color: rgb(255,255,255);
+        }
+
+        tr:nth-child(even){
+            background-color: rgb(111, 233, 255);
+        }
+
+        tr:hover{
+            background-color: rgb(5, 182, 182);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <Table>
+            <tr class="head">
+                <th>Elementos</th>
+                <th>Chrome</th>
+                <th>IE</th>
+                <th>Safari</th>
+                <th>Opera</th>
+                <th>Mozila</th>
+            </tr>
+            <tr>
+                <td>Overflow</td>
+                <td>8.9</td>
+                <td>7.6</td>
+                <td>7.8</td>
+                <td>12.5</td>
+                <td>9.8</td>
+            </tr>
+            <tr>
+                <td>list-style</td>
+                <td>8.9</td>
+                <td>7.6</td>
+                <td>7.8</td>
+                <td>12.5</td>
+                <td>9.8</td>
+            </tr>
+            <tr>
+                <td>Position</td>
+                <td>8.9</td>
+                <td>7.6</td>
+                <td>7.8</td>
+                <td>12.5</td>
+                <td>9.8</td>
+            </tr>
+        </Table>
+    </div>  
+</body>
+</html>
