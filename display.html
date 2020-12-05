@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lista</title>
+    <title>Display</title>
     <style>
         .container .elements-block span{
             border:#000 solid 1px;
@@ -15,20 +15,70 @@
         .container > div{
             margin: 20px;
         }
+
+        .container .elements-line :nth-child(2){
+            display: none;
+            /*visibility: hidden;*/
+        }
+        /* Inline-block */
+        .container .block-inline{
+            width: 20%;
+            border:#0000ff 1px solid;
+        }
+
+        .container .block-inline > div{
+            border:#07db00 1px solid;
+        }
+
+        .container .block-inline div span{
+            border:#000 1px solid;
+            background-color: #ffff00;
+        }
+
+        .container .block-inline div span.inline{
+            display: inline;
+            width: 150px;
+            height: 150px;
+        }
+
+        .container .block-inline div span.inline-block{
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="elements-block">
-            <span>Display line</span>
             <span>Display line 1</span>
             <span>Display line 2</span>
+            <span>Display line 3</span>
         </div>
         <div class="elements-line">
-            <div>Display line</div>
             <div>Display line 1</div>
             <div>Display line 2</div>
+            <div>Display line 3</div>
         </div>
+        <div class="block-inline">
+            <div>
+                A expressão Lorem ipsum em design gráfico e 
+                editoração é um texto padrão em latim utilizado na 
+                produção gráfica para <span class="inline">preencher</span> os espaços de texto em 
+                publicações para testar e ajustar aspectos visuais antes de 
+                utilizar conteúdo real.
+            </div>
+
+            <div>
+                A expressão Lorem ipsum em design gráfico e 
+                editoração é um texto padrão em latim utilizado na 
+                produção gráfica para <span class="inline-block">preencher</span> os espaços de texto em 
+                publicações para testar e ajustar aspectos visuais antes de 
+                utilizar conteúdo real.
+            </div>
+
+        </div>
+
     </div>  
 </body>
 </html>
