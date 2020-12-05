@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tip</title>
+    <style>
+        .transicao{
+            position: fixed;
+            background-color:#333;
+            color: #fff;
+            width: 20px;
+            height: 50px;
+            padding: 5px;
+            border-radius: 0 30px 30px 0;
+            transition: width 1s, height 1s;
+            left: 0px;
+            font-size: 1vw;
+            /*transition-delay: 1s ;*/
+        }
+
+        .transicao:hover{
+            width: 300px;
+            height: 50px;
+        }
+
+        .transform{
+            background-color:#333;
+            color: #fff;
+            width: 100px;
+            height: 100px;
+            margin:50px auto;
+            transition: transform 1s ;
+            box-shadow: 10px 20px 2px red;
+            background-image: linear-gradient(to top,red, rgba(0, 0, 255, 0.192), rgba(255, 255, 0, 0.466));
+        }
+        .transform:hover{
+            transform: rotatex(360deg);
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="transicao">
+        <span>
+            A expressão Lorem ipsum em design gráfico.
+        </span>
+    </div>  
+
+    <div class="transform">
+        <span>
+            A expressão Lorem ipsum em design gráfico.
+        </span>
+    </div>  
+</body>
+</html>

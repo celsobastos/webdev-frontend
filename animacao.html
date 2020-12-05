@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animação</title>
+    <style>
+        .animacao{
+            border:1px solid #000;
+            width: 50%;
+            height: 400px;
+            margin: auto;
+        }
+
+        .animacao span{
+            background-color:rgb(59, 114, 165); 
+            width: 100px;
+            height: 100px;
+            display: block;
+            border-radius: 100px;
+            animation-name:anime01;
+            animation-duration: 5s;
+            position: relative;
+        }
+
+        @keyframes anime01 {
+            from {
+                background-color:red;
+                left: 0; transform: 
+                rotatex(0deg);
+            }
+            to   {
+                background-color:blue;
+                left: 200px; 
+                transform: rotatex(360deg);
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="animacao">
+        <span></span>
+    </div>  
+
+</body>
+</html>
