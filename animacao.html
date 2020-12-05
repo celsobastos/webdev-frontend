@@ -6,7 +6,7 @@
     <style>
         .animacao{
             border:1px solid #000;
-            width: 50%;
+            width: 600px;
             height: 400px;
             margin: auto;
         }
@@ -17,11 +17,48 @@
             height: 100px;
             display: block;
             border-radius: 100px;
-            animation-name:anime01;
-            animation-duration: 5s;
+            animation-name:anime03;
+            animation-duration: 1s;
             position: relative;
+            animation-delay: 1s;
+            margin: auto;
+            animation-direction: alternate-reverse;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in;
         }
 
+        @keyframes anime03{
+            0%   {
+                background-color:red;
+                top:0px
+            }
+
+            95%   {
+                background-color:red;
+                width: 100px;
+            }
+
+            98%   {
+                background-color:red;
+                width: 110px;
+            }
+
+
+            100% {
+                background-color:yellow;
+                top:300px;
+                width: 100px;
+            }
+        }
+
+        @keyframes anime02{
+            0%   {background-color:red; left:0px ;top:0px}
+            25%  {background-color:gray;left:500px; top:0px}
+            50%  {background-color:blue;left:500px; top:300px}
+            75%  {background-color:green;left:0px;top:300px;}
+            100% {background-color:yellow;left:0px;top:0px}
+        }
+        
         @keyframes anime01 {
             from {
                 background-color:red;

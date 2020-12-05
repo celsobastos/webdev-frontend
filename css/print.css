@@ -1,0 +1,7 @@
+nav{
+    visibility: hidden;
+}
+
+.lorem-ipsum{
+    page-break-before:always;
+}
