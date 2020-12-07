@@ -1,0 +1,15 @@
+.container{
+    background-color:blue;
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-direction: row-reverse;*/
+}
+
+.container > div{
+    width: 100px;
+    line-height: 75px;
+    margin:15px;
+    background-color:#fff;
+    font-size: 30px;
+    padding: 25px;
+}
