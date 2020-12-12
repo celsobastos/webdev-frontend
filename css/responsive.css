@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.break-float::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+header{
+    background-color: rgb(83, 83, 189);
+    background-image: url("../images/meadow.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.roothead{
+    padding: 5em 0 5em 0;
+}
+
+.container{
+    width: 100%;
+}
+
+/* width container */
+@media only screen and (max-width: 576px){
+    .container{
+       max-width: 540px ;
+    }
+}
+@media only screen and (max-width: 768px){
+    .container{
+       max-width: 720px ;
+    }
+}
+@media only screen and (max-width: 992px){
+    .container{
+       max-width: 960px ;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .container{
+       max-width: 1140px ;
+    }
+}
+
+.primary-color{
+    color:#fff;
+}
+
+.padding-bottom{
+    padding-bottom: 15px;
+}
+
+.padding-top{
+    padding-top:15px;
+}
+
+/* Formata paragrago */
+.text-center{
+    text-align: center;
+    text-shadow: 0 0 3px #000, 0 0 5px rgb(150, 7, 7);
+}
+
+/* centraliza elementos */
+.margin-auto{
+    margin:auto;
+}
+
+/* Quebra pagina se necessário */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* criar colunas */
+[class*="col-"]{
+    float:left;
+}
+
+
+/* For Mobile */
+@media only screen and (max-width: 576px){
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3
+    {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+/* For desktop */
+@media only screen and (min-width: 576px){
+    .col-d-1 {width: 8.33%;}
+    .col-d-2 {width: 16.66%;}
+    .col-d-3 {width: 25%;}
+    .col-d-4 {width: 33.33%;}
+    .col-d-5 {width: 41.66%;}
+    .col-d-6 {width: 50%;}
+    .col-d-7 {width: 58.33%;}
+    .col-d-8 {width: 66.66%;}
+    .col-d-9 {width: 75%;}
+    .col-d-10 {width: 83.33%;}
+    .col-d-11 {width: 91.66%;}
+    .col-d-12 {width: 100%;}
+}
+
+
+/*
+.container{
+    background-color: green;
+    max-width: 800px;
+    min-width: 500px;
+    height: 300px;
+}
+@media only screen and (max-width: 768px){
+    .container{
+        background-color: yellow;
+    }
+    
+}
+
+@media only screen and (max-width: 586px){
+    .container{
+        background-color: blue;
+    }
+    
+}*/
