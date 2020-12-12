@@ -29,10 +29,25 @@ header{
     width: 100%;
 }
 
+img.menu{
+    display: none;
+}
+
 /* width container */
 @media only screen and (max-width: 576px){
     .container{
        max-width: 540px ;
+    }
+    img.menu{
+        width: 9%;
+        display: block;
+    }
+    .menu-link{
+        display: none; 
+    }
+
+    body{
+        font-size: 16vw;
     }
 }
 @media only screen and (max-width: 768px){
@@ -147,6 +162,30 @@ input[type="text"]{
     background: linear-gradient(to bottom, #3276f3 5%, rgb(0, 53, 200)100%);
     background-color:rgb(60, 60, 175);
 }
+
+section div{
+    background-color:rgb(60, 60, 175); 
+    background-color:blue;
+    color:#fff;
+    font-size: 20px;
+
+}
+
+/* menu nav */
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    float: left;
+}
+nav ul li a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+
 
 
 /*
