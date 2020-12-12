@@ -1,7 +1,13 @@
 .container{
+    height: 400px;
     background-color:blue;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center; /*center flex-start flex-end*/
+    justify-content: center;
+
+    /*justify-content: space-around;*/
+    /*justify-content: flex-end;*/ /* center flex-start flex-end*/
+    /*flex-wrap: nowrap;*/
     /*flex-direction: row-reverse;*/
 }
 

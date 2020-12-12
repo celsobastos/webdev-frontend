@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overlay</title>
+    <link href="css/overlay.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Click me para abrir o Overlay</h2>
+        <button onclick="on()">Click me</button>
+    </div>  
+    <div id="overlay">
+        <div class="container">
+            <div class="aviso">
+                <h3>Hello World!</h3>
+                <button onclick="off()">Fechar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function on(){
+            document.getElementById("overlay").style.display = "Block";
+        }
+
+        function off(){
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>

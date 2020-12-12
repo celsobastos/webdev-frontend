@@ -1,0 +1,33 @@
+body > div.container{
+    text-align: center;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+div#overlay{
+    position: fixed;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    bottom: 0;
+    display: none;
+}
+
+div#overlay .aviso{
+    width: 300px;
+    height: 310px;
+    background-color:rgb(230, 230, 230);
+    border:#999 2px solid;
+}
+
+div#overlay .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

@@ -1,0 +1,20 @@
+#prefer{
+    color:green;
+}
+
+.container{
+    /*color:red !important;*/
+    color:red;
+}
+
+div#prefer{
+    color: gray;
+}
+
+div[class="container"]{
+    color:blue !important;
+}
+
+.container{
+    color:blue;
+}
