@@ -1,0 +1,21 @@
+
+nav{
+    background-color : #b316ab; 
+    height: 100px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li{
+    float: left;
+}
+
+ul li a{
+    display: inline-block;
+    padding: 5px;
+    color: #fff;
+    text-decoration: none;
+}
+

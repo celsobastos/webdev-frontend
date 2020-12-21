@@ -1,3 +1,14 @@
+/*
+    Author:  Celso
+    Data: 10/07/2020
+
+    Description:
+        lksdjfsal fasldjkfaslkdfj açlsdjfçlasdf
+        asdfa sdfjasjdflasjdflçkas
+        dfasjdf lasjdflçjsalkj
+*/
+
+
 /* Formataçao da font */
 h2{
     color: rgb(16, 61, 119);
@@ -7,19 +18,16 @@ h2{
     font-weight: bold;
     font-style: italic /* normal */;
     font-variant: small-caps;
-
     text-decoration: underline; /* none, overline*/
 }
 
-/* formatando links*/
+/* formatando links */
 a{
     border: solid 1px red;
     text-decoration: none; 
-    
-    -moz-border-radius: 5em;
-    -ms-border-radius: 10em;
-    -o-border-radius: 2em;
-    -webkit-border-radius: 1em;
+    -moz-border-radius: 5em; /* implement only in Firefox */
+    -ms-border-radius: 10em; /* IE */ 
+    -webkit-border-radius: 1em; /* Chrome, Safari, Opera */
     border-radius: 2em;
 }
 
@@ -28,4 +36,10 @@ section p{
     width: 400px;
 }
 
+
+
+nav{
+    background-color : #b316ab; 
+    height: 100px;
+}
 

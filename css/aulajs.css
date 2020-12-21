@@ -1,0 +1,22 @@
+.container{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
+.container #content{
+    border: 1px solid #000;
+    height: 300px;
+    width: 300px;
+    background-color:rgb(52, 181, 204);
+    margin: auto;
+}
+
+h2{
+    text-align: center;
+}
+
+button{
+    margin: auto;
+    padding: 10px 30px;
+    cursor: pointer;
+}
