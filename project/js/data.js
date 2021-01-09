@@ -1,5 +1,73 @@
-//Arrow Function
+//Fetch
+const url = 'https://jsonplaceholder.typicode.com/users';
+const div = document.getElementById('soma');
 
+fetch(url)
+    .then((resp) => resp.json())
+    .then((data) => {
+        //console.log(data)
+
+        /*return data.map((data) => {
+            div.innerHTML += 
+                    '<div>' 
+                    +  data.name 
+                    + ' - ' 
+                    + data.email 
+                    + '</div>';
+        })*/
+
+        /*var names = '';
+        var i;
+        for(i = 0; i < data.length; i++){
+            names += '<div>' + data[i].name + '</div>';
+        }
+        div.innerHTML = names*/
+    })
+    .catch((error) => {
+        console.log("Ops! Algo deu errado")
+    })
+
+
+//console.log("minha execução");
+//Promisse
+let promisse = new Promise((resolve,reject) => {
+    let result = 10 + 10;
+    if(result == 20){
+        resolve('Sucesso')
+    } else {
+        reject('Falha')
+    }
+})
+
+promisse.then((message) => {
+    //console.log('Resposta: ' + message);
+}).catch((error) => {
+    //console.log(error);
+})
+
+//console.log("minha execução 2");
+//console.log("minha execução 3");
+//console.log("minha execução 4");
+
+
+
+
+//Assincrono
+function testTime() {
+    document.getElementById('soma').innerHTML = 'Pedro';
+}
+
+function testDate() {
+    let d = new Date(); 
+    document.getElementById('soma').innerHTML = 
+      d.getHours() + ':' +  d.getMinutes() + ':' +  d.getSeconds();
+}
+
+//document.getElementById('soma').innerHTML = 'Celso';
+//setTimeout(testTime,5000);
+//setInterval(testDate,1000);
+
+//Arrow Function
 /*
 //Ex: 01
 let hellow = function (message) {
@@ -14,7 +82,7 @@ let hellow = (message) => {
 }
 */
 let hellow = (message) =>  "Hello World! " + message;
-document.getElementById('soma').innerHTML = hellow("Arrow Function.");
+//document.getElementById('soma').innerHTML = hellow("Arrow Function.");
 
 
 //Callback

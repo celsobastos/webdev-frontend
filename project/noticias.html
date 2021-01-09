@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" harf="css/style.css">
     <title>Noticias</title>
 </head>
 <body>
+    <div class="container">
+        <form>
+            <input type="text" id="search" />
+            <input type="submit" value="Busca" />
+        </form>
+        <h2>Resultado</h2>
+        <div id="resultado"></div>
+    </div>
+
     <div id="soma"></div>
     <hr />
     <h1>Noticias</h1>
@@ -17,6 +27,8 @@
         <p id="noticia01">Noticias de esporte</p>
         <p id="noticia01">Noticias de esporte 2</p>
     </div>
+
+
     
     <script src="js/data.js"></script>
     <script src="js/noticias.js"></script>
