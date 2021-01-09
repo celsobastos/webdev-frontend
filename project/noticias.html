@@ -3,17 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" harf="css/style.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Noticias</title>
 </head>
 <body>
     <div class="container">
-        <form>
-            <input type="text" id="search" />
-            <input type="submit" value="Busca" />
-        </form>
-        <h2>Resultado</h2>
-        <div id="resultado"></div>
+        <div class="jumbotron">
+            <h1>Sistema de busca com FETCH</h1>
+            <p>Fazendo solicitações HTTP como fetch .</p>
+          
+            <form class="form-inline">
+                <label for="email" class="mr-sm-2">Seach</label>
+                <input class="form-control mb-2 mr-sm-2" type="text" id="search" />
+                <input class="btn btn-primary mb-2" type="submit" value="Busca" />
+            </form>
+            <h4>Resultado</h4>
+            <div class="alert alert-success" id="resultado">
+                
+            </div>
+        </div>
     </div>
 
     <div id="soma"></div>
@@ -32,5 +47,6 @@
     
     <script src="js/data.js"></script>
     <script src="js/noticias.js"></script>
+    <script src="js/fetch.js"></script>
 </body>
 </html>
