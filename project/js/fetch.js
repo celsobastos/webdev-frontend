@@ -1,3 +1,5 @@
+document.getElementById('spinner').style.display = 'none';
+
 let btnSearch = document.getElementById('btn-search');
 btnSearch.addEventListener('click', function () {
     executeSearch();  
@@ -17,6 +19,9 @@ function executeSearch() {
 }
 
 function search(name , url, div) {
+
+    document.getElementById('spinner').style.display = 'block';
+    
     fetch(url)
     .then((resp) => resp.json())
     .then((data) => {
@@ -30,6 +35,7 @@ function search(name , url, div) {
         if(!error){
             div.innerHTML = 'Ops! Nome não existe.';
         }
+        document.getElementById('spinner').style.display = 'none';
         return test;
     })
     .catch((error) => {
