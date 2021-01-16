@@ -46,3 +46,17 @@ header{
     padding: 100px ;
     color: #fff;
 }
+
+.container{
+    border: #000 solid 1px;
+}
+.container div{
+    /*border: red solid 1px;*/
+    width: 400px;
+    height: 200px;
+    float: left;
+}
+
+img{
+    width: 50%;
+}
