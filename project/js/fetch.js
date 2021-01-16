@@ -19,8 +19,6 @@ function executeSearch() {
 }
 
 function search(name , url, div) {
-
-    document.getElementById('spinner').style.display = 'block';
     
     fetch(url)
     .then((resp) => resp.json())

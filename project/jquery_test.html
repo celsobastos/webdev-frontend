@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery library 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/trainning.js"></script> -->
+    <title>Implement jquery</title>
+</head>
+<body>
+    <!--<div class="container" style="margin: auto; width: 400px; height: 100px;">
+        <div id="div2" style="background-color:blue;height: 50px;">
+            <strong>Minha</strong> div 2  
+        </div>
+        <div id="div3" style="background-color:blue;height: 50px;">
+            <strong>Minha</strong> div 2  
+        </div>
+    </div>
+
+    <button id="test">Click Me, Please! Test Storage</button>
+    <button id="test2">Click Me, Please! Test Session</button>
+    <script src="js/storege.js"></script>-->
+    <script>
+
+        // Working DB indexedDB
+
+
+var request = indexedDB.open("library6");
+console.log('ok 0')
+
+var db;
+request.onupgradeneeded = function() {
+  console.log('ok 1')
+  // The database did not previously exist, so create object stores and indexes.
+  db = request.result;
+  var store = db.createObjectStore("books", {keyPath: "isbn"});
+  var titleIndex = store.createIndex("by_title", "title", {unique: true});
+  var authorIndex = store.createIndex("by_author", "author");
+
+  // Populate with initial data.
+  store.put({title: "Quarry Memories", author: "Fred", isbn: 123456});
+  store.put({title: "Water Buffaloes", author: "Fred", isbn: 234567});
+  store.put({title: "Bedrock Nights", author: "Barney", isbn: 345678});
+};
+
+request.onsuccess = function() {
+  console.log("Success")
+  db = request.result;
+};
+
+var tx = db.transaction("books", "readwrite");
+var store = tx.objectStore("books");
+
+store.put({title: "Quarry Memories", author: "Fred", isbn: 123456});
+store.put({title: "Water Buffaloes", author: "Fred", isbn: 234567});
+store.put({title: "Bedrock Nights", author: "Barney", isbn: 345678});
+
+tx.oncomplete = function() {
+  console.log("Complete")
+};
+
+        
+
+    </script>
+</body>
+</html>

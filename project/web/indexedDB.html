@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">  
+</head>
+<body>
+    <button id="add">ADD New</button>
+    <button id="search">Search</button>
+    <button id="get">Search 2</button>
+    <button id="del">delete</button>
+    <button id="update">UPDATE</button>
+    <script>
+
+        var connection;
+
+        var openRequest = window.indexedDB.open('library', 4);
+
+        /*
+        //Testando o acesso
+        var request = indexedDB.open("MyTestDatabase");
+        request.onerror = function(event) {
+        console.log("Why didn't you allow my web app to use IndexedDB?!");
+        };
+        request.onsuccess = function(event) {
+        db = event.target.result;
+        };*/
+
+        openRequest.onupgradeneeded = (e) =>  {
+
+            console.log('Criando ou atualizando o banco');
+            connection = e.target.result;
+            //minhaConnection.createObjectStore('negociacoes')
+            // The database did not previously exist, so create object stores and indexes.
+            //var db = request.result;
+            var store = connection.createObjectStore("books", {keyPath: "isbn"});
+            var titleIndex = store.createIndex("by_title", "title", {unique: true});
+            var authorIndex = store.createIndex("by_author", "author");
+
+            // Populate with initial data.
+            store.put({title: "Quarry Memories", author: "Fred", isbn: 123456});
+            store.put({title: "Water Buffaloes", author: "Fred", isbn: 234567});
+            store.put({title: "Bedrock Nights", author: "Barney", isbn: 345678}); 
+
+            // This is what our customer data looks like.
+            /*const customerData = [
+                { ssn: "444-44-4444", name: "Bill", age: 35, email: "bill@company.com" },
+                { ssn: "555-55-5555", name: "Donna", age: 32, email: "donna@home.org" }
+            ];
+            customerData.forEach(function(customer) {
+                customerObjectStore.add(customer);
+            });*/
+        };
+
+        //ADD
+        openRequest.onsuccess = (e) => {
+            console.log('Conexão realizada com sucesso');
+            // e.target.result é uma instância de IDBDatabase
+            connection = e.target.result;
+            // Run the addData() function to add the data to the database
+            var addBtn = document.getElementById('add');
+
+            addBtn.addEventListener('click', () => {
+
+                var tx = connection.transaction("books", "readwrite");
+                var store = tx.objectStore("books");
+                store.put({title: "Harry Porte1rp7", author: "Anny", isbn: 3});
+                tx.oncomplete = function() {
+                // All requests have succeeded and the transaction has committed.
+                console.log('Complete');
+                };
+                
+            })
+
+            //GETTER
+            var searchBtn = document.getElementById('search');
+            searchBtn.addEventListener('click', () => {
+                var tx = connection.transaction("books", "readonly");
+                var store = tx.objectStore("books");
+                var index = store.index("by_title");
+
+                var request = index.get("Harry Porter7");
+                request.onsuccess = function() {
+                var matching = request.result;
+                if (matching !== undefined) {
+                    // A match was found.
+                    console.log(matching.isbn, matching.title, matching.author);
+                } else {
+                    // No match was found.
+                    console.log(null);
+                }
+                };
+            });
+
+            //GETTER 2
+            var get = document.getElementById('get');
+            get.addEventListener('click', () => {
+                var transaction = connection.transaction(["books"]);
+                var objectStore = transaction.objectStore("books");
+                var request = objectStore.get(2);
+                request.onerror = function(event) {
+                // Handle errors!
+                };
+                request.onsuccess = function(event) {
+                // Do something with the request.result!
+                console.log("Name for SSN 444-44-4444 is " + request.result.title);
+                };
+            });
+
+            //DELETE
+            var del = document.getElementById('del');
+            del.addEventListener('click', () => {
+                var tx = connection.transaction("books", "readwrite");
+                var store = tx.objectStore("books");
+
+                var request = store.delete(1);
+                request.onsuccess = function() {
+                    console.log('Deleted');
+                };
+            });
+
+            //UPDATE
+            var up = document.getElementById('update');
+            up.addEventListener('click', () => {
+                var objectStore = connection.transaction(["books"], "readwrite")
+                    .objectStore("books");
+                var request = objectStore.get(1);
+                request.onerror = function(event) {
+                // Handle errors!
+                };
+                request.onsuccess = function(event) {
+                    // Get the old value that we want to update
+                    var data = event.target.result;
+
+                    // update the value(s) in the object that you want to change
+                    data.author = 'Anny';
+
+                    // Put this updated object back into the database.
+                    var requestUpdate = objectStore.put(data);
+                    requestUpdate.onerror = function(event) {
+                        // Do something with the error
+                    };
+                    requestUpdate.onsuccess = function(event) {
+                        // Success - the data is updated!
+                    };
+                };
+            });
+
+            //CURSOR - select all
+            var objectStore = connection.transaction("books").objectStore("books");
+            objectStore.openCursor().onsuccess = function(event) {
+                var cursor = event.target.result;
+                if (cursor) {
+                    console.log("Name for SSN " + cursor.key + " is " + cursor.value.author);
+                    cursor.continue();
+                }
+                else {
+                    console.log("No more entries!");
+                }
+            };
+
+            objectStore.getAll().onsuccess = function(event) {
+                console.log("Got all customers: " + event.target.result);
+            };
+
+        };
+
+        openRequest.onerror = (e) => {
+            console.log(e.target.error);
+        };
+        
+        //Referecias
+        //https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
+
+    </script>
+</body>
