@@ -57,19 +57,15 @@ $(function () {
    })*/
 
    $('img').on({
-       mouseover:function () {
-           $('body').css('background-color', 'red');
-       }
-   },{
-       mouseout:function () {
-        $('body').css('background-color', 'blue');
-       } 
-   },{
-       click:function () {
-        $('body').css('background-color', 'green');
-       } 
-   })
+        mouseover:function () {
+            $('body').css('background-color', 'red');
+        },
+        mouseout:function () {
+            $('body').css('background-color', 'blue');
+        },
+        click:function () {
+            $('body').css('background-color', 'green');
+        }
+   });
 
-
-
-})
+});
