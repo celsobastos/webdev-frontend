@@ -13,4 +13,34 @@ nav ul li{
 nav ul li a{
     display: inline-block;
     text-decoration: none;
+    padding: 5px;
+}
+
+.btn{
+    /*box-shadow: 0px 0px 0px ;*/
+    background: linear-gradient(to bottom, rgb(0, 53, 200) 5%, #3276f3 100%);
+    background-color:blue;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    color:#fff;
+    padding: 9px 12px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #000;
+}
+
+.btn:hover{
+    background: linear-gradient(to bottom, #3276f3 5%, rgb(0, 53, 200)100%);
+    background-color:rgb(60, 60, 175);
+}
+
+/* Limpa o float left e float right */
+.break-float::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+header{
+    background-color: rgb(83, 83, 189);
 }
