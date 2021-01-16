@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 32px;
+}
+
+.break-float::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+header{
+    background-color: rgb(83, 83, 189);
+    background-image: url("../images/meadow.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.roothead{
+    padding: 5em 0 5em 0;
+}
+
+.container{
+    width: 100%;
+}
+
+img.menu{
+    display: none;
+}
+
+/* width container */
+@media only screen and (max-width: 576px){
+    .container{
+       max-width: 540px ;
+    }
+    img.menu{
+        width: 9%;
+        display: block;
+    }
+    .menu-link{
+        display: none; 
+    }
+
+    body{
+        font-size: 16vw;
+    }
+}
+@media only screen and (max-width: 768px){
+    .container{
+       max-width: 720px ;
+    }
+}
+@media only screen and (max-width: 992px){
+    .container{
+       max-width: 960px;
+    }
+}
+@media only screen and (max-width: 1200px){
+    .container{
+       max-width: 1140px ;
+    }
+}
+
+.primary-color{
+    color:#fff;
+}
+
+.padding-bottom{
+    padding-bottom: 15px;
+}
+
+.padding-top{
+    padding-top:15px;
+}
+
+/* Formata paragrago */
+.text-center{
+    text-align: center;
+    text-shadow: 0 0 3px #000, 0 0 5px rgb(223, 194, 194);
+}
+
+/* centraliza elementos */
+.margin-auto{
+    margin:auto;
+}
+
+/* Quebra pagina se necessário */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* criar colunas */
+[class*="col-"]{
+    float:left;
+}
+
+input[type="text"], 
+input[type="submit"]{
+    width: 100%;
+    border:0 none;
+    outline: 0;
+}
+
+/* format form */
+input[type="text"]{
+    border-radius: 4px;
+    padding: 10px;
+}
+
+/* For Mobile */
+@media only screen and (max-width: 576px){
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3{width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+/* For desktop */
+@media only screen and (min-width: 576px){
+    .col-d-1 {width: 8.33%;}
+    .col-d-2 {width: 16.66%;}
+    .col-d-3 {width: 25%;}
+    .col-d-4 {width: 33.33%;}
+    .col-d-5 {width: 41.66%;}
+    .col-d-6 {width: 50%;}
+    .col-d-7 {width: 58.33%;}
+    .col-d-8 {width: 66.66%;}
+    .col-d-9 {width: 75%;}
+    .col-d-10 {width: 83.33%;}
+    .col-d-11 {width: 91.66%;}
+    .col-d-12 {width: 100%;}
+}
+
+.btn{
+    /*box-shadow: 0px 0px 0px ;*/
+    background: linear-gradient(to bottom, rgb(0, 53, 200) 5%, #3276f3 100%);
+    background-color:blue;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    color:#fff;
+    padding: 9px 12px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #000;
+}
+
+.btn:hover{
+    background: linear-gradient(to bottom, #3276f3 5%, rgb(0, 53, 200)100%);
+    background-color:rgb(60, 60, 175);
+}
+
+section div{
+    background-color:rgb(60, 60, 175); 
+    background-color:blue;
+    color:#fff;
+    font-size: 20px;
+
+}
+
+/* menu nav */
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    float: left;
+}
+nav ul li a{
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/*
+.container{
+    background-color: green;
+    max-width: 800px;
+    min-width: 500px;
+    height: 300px;
+}
+@media only screen and (max-width: 768px){
+    .container{
+        background-color: yellow;
+    }
+    
+}
+
+@media only screen and (max-width: 586px){
+    .container{
+        background-color: blue;
+    }
+    
+}*/
