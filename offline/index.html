@@ -8,10 +8,18 @@
 </head>
 <body>
 
+    <div id="storage">
+
+    </div>
 
     <script>
         if( typeof Storage !== 'undefined' ){
             console.log("Ops! Storage suportado.")
+            localStorage.setItem("nome","Paulo da Silva");
+
+            var nome = localStorage.getItem("nome");
+
+            $('#storage').html(nome);
 
         } else {
             console.log("Ops! Storage não suportado.")
