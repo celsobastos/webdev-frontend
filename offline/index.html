@@ -11,19 +11,93 @@
     <div id="storage">
 
     </div>
+    <button id="storageBtn">Contagem de Cliques Storage</button>
+
+    <button id="sessionBtn">Contagem de Cliques Session</button>
+    
+    <hr />
+    <h1>IndexedDB</h1>
+    <form>
+        <label for="titulo">Titulo:</label>
+        <input type="text" name="titulo"  />
+        <input type="button" value="enviar" />
+    </form>
 
     <script>
+        /*
         if( typeof Storage !== 'undefined' ){
-            console.log("Ops! Storage suportado.")
-            localStorage.setItem("nome","Paulo da Silva");
+            //console.log("Ops! Storage suportado.")
+            //localStorage.setItem("nome","Paulo da Silva");
+            //var nome = localStorage.getItem("nome");
+            //$('#storage').html(nome);
 
-            var nome = localStorage.getItem("nome");
 
-            $('#storage').html(nome);
+            //Button Storage
+            if(!localStorage.buttonClick){
+                localStorage.buttonClick = 0;
+            }
+
+            $('button#storageBtn').on('click', function(){
+                var contagem = localStorage.buttonClick;
+                localStorage.buttonClick = Number(contagem) + 1
+                $('#storage').html(localStorage.buttonClick);
+            });
+
+
+            // Button Session
+            if(!sessionStorage.buttonClick){
+                sessionStorage.buttonClick = 0;
+            }
+
+            $('button#sessionBtn').on('click', function(){
+                var contagem = sessionStorage.buttonClick;
+                sessionStorage.buttonClick = Number(contagem) + 1
+                $('#storage').html(sessionStorage.buttonClick);
+            });
+
 
         } else {
             console.log("Ops! Storage não suportado.")
         }
+        */
+
+        var request = window.indexedDB.open('livraria',1);
+
+        request.onerror = function(event){
+            console.log("Error! não suporta IndexedDB ")
+        }
+        
+        request.onupgradeneeded = function (event){
+
+            console.log("Criando ou atualizando o banco");
+            var connect = event.target.result;
+
+            var loja = connect.createObjectStore('livros', {keyPath: 'isbn'});
+
+            loja.put({
+                titulo: "Harry Portter",
+                autor: "Anny",
+                isbn: 1,
+            });
+
+            loja.put({
+                titulo: "Um homen sem rosto",
+                autor: "Carlos Barreto",
+                isbn: 2,
+            });
+
+        }
+
+        request.onsuccess = function(event){
+            console.log("Banco Criado com sucesso")
+            var connect = event.target.result;
+
+
+
+
+        }
+
+
 
     </script>
 </body>
