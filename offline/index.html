@@ -19,8 +19,8 @@
     <h1>IndexedDB</h1>
     <form>
         <label for="titulo">Titulo:</label>
-        <input type="text" name="titulo"  />
-        <input type="button" value="enviar" />
+        <input type="text" name="titulo" id="textTitulo" />
+        <input id="btnTitulo" type="button" value="enviar" />
     </form>
 
     <script>
@@ -92,7 +92,28 @@
             console.log("Banco Criado com sucesso")
             var connect = event.target.result;
 
+            $('#btnTitulo').on('click', () => {
+                var titulo = $('#textTitulo').val();
+                var tr = connect.transaction('livros','readwrite');
+                var loja = tr.objectStore('livros');
 
+                loja.put({
+                    titulo: titulo,
+                    autor: "Carlos Barreto",
+                    isbn: 4,
+                });
+
+            })
+
+
+            var transaction = connect.transaction(['livros']);
+            var objectStore = transaction.objectStore('livros');
+            var requestData = objectStore.get(1);
+
+            requestData.onsuccess = function(event){
+
+                console.log(requestData.result.autor)
+            }
 
 
         }
