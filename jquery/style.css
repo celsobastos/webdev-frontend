@@ -60,3 +60,8 @@ header{
 img{
     width: 50%;
 }
+
+.error{
+    color: red;
+    border: red solid 2px;
+}

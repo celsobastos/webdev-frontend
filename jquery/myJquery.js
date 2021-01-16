@@ -56,16 +56,57 @@ $(function () {
 
    })*/
 
+   /*
    $('img').on({
         mouseover:function () {
-            $('body').css('background-color', 'red');
+            //$('body').css('background-color', 'red');
+            $(this).attr("src","img/meadow.jpg")
         },
         mouseout:function () {
-            $('body').css('background-color', 'blue');
+            //$('body').css('background-color', 'blue');
+            $(this).attr("src","img/eagle.jpg")
+            $(this).removeClass('error');
         },
         click:function () {
-            $('body').css('background-color', 'green');
+            //$('body').css('background-color', 'green');
+            $(this).attr("src","img/paris.jpg")
+            $(this).addClass('error');
+            $(this).remove();
         }
-   });
+   });*/
+
+   
+   $('.btn').click(function (){
+     $(".images").each(function(i){
+        if(i === 1){
+            $(this).append('Imagem: ' + i);
+        }
+        $(this).find('strong').css("color","red");
+      });
+    })
+
+
+
+    $('#btnsearch').on('click', () => {
+        $("#resposta").html('Aguarde! Estamos processando ... ');
+
+        //function aguarde() {
+            $.ajax({
+                url: "/jquery/test_ajax.txt",
+                success : function (result) {
+                    $("#resposta").html(result);
+                }
+            })   
+        //}
+
+        
+
+        //setTimeout(aguarde,5000);
+        
+
+        
+
+    })
+
 
 });
